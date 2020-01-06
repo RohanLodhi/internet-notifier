@@ -3,6 +3,7 @@ import vlc
 import socket 
 import tkinter as tk
 import time
+import datetime
 
 def is_connected(): 
     try:
@@ -21,6 +22,7 @@ if __name__ == "__main__":
     while True:
 
         if is_connected():
+            print("\nInternet is available as of ", datetime.datetime.now())
             if play.lower() == "yes" or play.lower() == "y":
                 myobj = gTTS(text=mytext, lang=language, slow=False) 
                 myobj.save("speak.mp3") 
@@ -34,4 +36,5 @@ if __name__ == "__main__":
             exit()
 
         else:
+            print("Internet is down. Sleeping.", datetime.datetime.now())
             time.sleep(30)
