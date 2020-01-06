@@ -1,2 +1,2 @@
 # internet-notifier
-Python scripts that reads text when internet is back.
+Python scripts that reads text and opens a window when internet is back.
