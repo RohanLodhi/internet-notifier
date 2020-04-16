@@ -1,5 +1,5 @@
 # internet-notifier
-Python scripts that reads text and opens a window when internet is back.
+Python scripts that reads text and opens a window when internet is back and does a speedtest.
 
 # Features
 * Uses gTTS and tkinter
@@ -21,9 +21,9 @@ git clone git@github.com:RohanLodhi/internet-notifier.git
 sudo apt install pip3 
 ```
 
-## Install gTTS and vlc
+## Install speedtest, gTTS and vlc
 ```
-pip3 install gTTS python-vlc
+pip3 install gTTS python-vlc speedtest
 ```
 
 ## Run the Script
