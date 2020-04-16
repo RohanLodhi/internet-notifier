@@ -4,6 +4,7 @@ import socket
 import tkinter as tk
 import time
 import datetime
+import speedtest
 
 def is_connected(): 
     try:
@@ -12,6 +13,15 @@ def is_connected():
     except OSError: 
         pass 
         return False
+
+def test():
+    s = speedtest.Speedtest()
+    s.get_servers()
+    s.get_best_server()
+    s.download()
+    s.upload()
+    res = s.results.dict()
+    return res["download"], res["upload"], res["ping"]
 
 if __name__ == "__main__":
     print("Hi, this script plays music and opens a new window if internet is available, it will keep running to check if internet is back. \n")
@@ -34,6 +44,7 @@ if __name__ == "__main__":
             button.pack() 
             screen.mainloop()
             exit()
+            test()
 
         else:
             print("Internet is down. Sleeping.", datetime.datetime.now())
